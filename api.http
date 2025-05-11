@@ -1,9 +1,37 @@
 ### Create Song
 POST http://localhost:3000/songs
-Content-Type:  application/json
+Content-Type: application/json
+
 {
-    "title": "Love me",
-    "releasedDate": "2025-05-11",
-    "duration": "02:33",
-    "lyrics": "fweff fwefwef wfwefwef"
+  "title": "Love me like you do",
+  "releasedDate": "2025-05-11",
+  "duration": "02:33",
+  "lyrics": "fweff fwefwef wfwefwef"
 }
+
+### GET Songs
+GET http://localhost:3000/songs
+Content-Type: application/json
+
+### GET One Song
+GET http://localhost:3000/songs/682051e533863f7914884c7e
+Content-Type: application/json
+
+
+### Delete Song
+DELETE  http://localhost:3000/songs/682051e533863f7914884c7e
+Content-Type: application/json
+
+
+### Create Album
+POST http://localhost:3000/albums
+Content-Type: application/json
+
+{
+  "title": "Dance",
+  "songs": ["682051e533863f7914884c80", "682056b537d6060c0ac626c5"]
+}
+
+### Get Albums
+GET http://localhost:3000/albums
+Content-Type: application/json

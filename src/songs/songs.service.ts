@@ -10,9 +10,19 @@ export class SongsService {
     @InjectModel(Song.name)
     private readonly songModel: Model<SongDocument>,
   ) {}
-
   async create(createSongDto: CreateSongDTO): Promise<Song> {
-    const song = await this.songModel.create(createSongDto);
-    return song;
+    return await this.songModel.create(createSongDto);
+  }
+
+  async find(): Promise<Song[]> {
+    return this.songModel.find();
+  }
+
+  async findById(id: string): Promise<Song> {
+    return this.songModel.findById(id);
+  }
+
+  async delete(id: string): Promise<Song> {
+    return this.songModel.findByIdAndDelete(id);
   }
 }
